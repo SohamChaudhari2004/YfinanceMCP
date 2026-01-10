@@ -1,0 +1,19 @@
+[project]
+name = "yfinance-agent"
+version = "0.1.0"
+description = "MCP agent for stock market analysis using yfinance and ChromaDB."
+readme = "README.md"
+requires-python = "==3.11"
+
+dependencies = [
+    "chromadb>=1.0.4",
+    "langchain>=0.2.14",
+    "langchain-core>=0.2.14",
+    "langchain-community>=0.2.14",
+    "langchain-groq",
+    "langchain-mcp-adapters",
+    "python-dotenv",
+    "yfinance>=0.2.55",
+    "mcp[cli]>=1.6.0",
+    "dotenv>=0.9.9",
+]
