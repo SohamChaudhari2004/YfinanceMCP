@@ -127,7 +127,7 @@ env.bak/
 venv.bak/
 
 # chromaDB
-.ticker_db/
+ticker_db/
 
 # Spyder project settings
 .spyderproject

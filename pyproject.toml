@@ -1,19 +1,30 @@
 [project]
-name = "yfinance-agent"
-version = "0.1.0"
-description = "MCP agent for stock market analysis using yfinance and ChromaDB."
+name = "stock-ai-api"
+version = "1.0.0"
+description = "HTTP API for stock data, stock screening and an LLM stock-analysis agent (Groq + yfinance)."
 readme = "README.md"
-requires-python = "==3.11"
+requires-python = ">=3.11,<3.13"
 
 dependencies = [
-    "chromadb>=1.0.4",
-    "langchain>=0.2.14",
-    "langchain-core>=0.2.14",
-    "langchain-community>=0.2.14",
-    "langchain-groq",
-    "langchain-mcp-adapters",
-    "python-dotenv",
-    "yfinance>=0.2.55",
-    "mcp[cli]>=1.6.0",
-    "dotenv>=0.9.9",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "slowapi>=0.1.9",
+    "langchain>=1.2",
+    "langchain-groq>=1.0",
+    "langgraph>=1.0",
+    "langgraph-checkpoint-sqlite>=3.0",
+    "yfinance>=1.0",
+    "cachetools>=5.3",
+    "python-dotenv>=1.0",
+    "mcp>=1.6.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "httpx>=0.27",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

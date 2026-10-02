@@ -1,0 +1,22 @@
+# Render Blueprint: New > Blueprint > pick this repo.
+services:
+  - type: web
+    name: stock-ai-api
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false            # Render asks for this value on first deploy
+      - key: API_KEYS
+        generateValue: true    # random key; copy it from the Environment tab
+      - key: CORS_ORIGINS
+        value: https://sohamchaudhari.in
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
+      - key: RATE_LIMIT_CHAT
+        value: 10/minute;200/day
+      - key: RATE_LIMIT_DATA
+        value: 60/minute
